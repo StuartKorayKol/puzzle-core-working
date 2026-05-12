@@ -1,0 +1,28 @@
+[gd_scene format=4 uid="uid://yopkhmguqpl4"]
+
+[ext_resource type="Script" uid="uid://baeq41tk3fmlu" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://chm64u81uaanb" path="res://blue-box.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ctdrfweeqa1mb" path="res://red-box.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://oe1y8dkbiwbk" path="res://yellow-box.tscn" id="3_1bvp3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
+texture = ExtResource("1_ig7tw")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+
+[node name="Node2D" type="Node2D" unique_id=549716766]
+script = ExtResource("1_1bvp3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1016498169]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAAAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAADAAMAAAAAAAAAAAABAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="RedBox" parent="." unique_id=1345704137 instance=ExtResource("2_h2yge")]
+position = Vector2(128, 128)
+
+[node name="YellowBox" parent="." unique_id=1330411690 instance=ExtResource("3_1bvp3")]
+position = Vector2(128, 896)
