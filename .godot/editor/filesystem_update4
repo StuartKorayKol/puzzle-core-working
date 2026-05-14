@@ -4,3 +4,4 @@ res://blue-box.tscn
 res://red-box.tscn
 res://yellow-box.tscn
 res://scenes/main.tscn
+res://scripts/main.gd

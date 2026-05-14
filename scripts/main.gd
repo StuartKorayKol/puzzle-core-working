@@ -40,35 +40,35 @@ var MIN_NOTE_TYPE: float =  0.0625
 var MIN_NOTE_DURATION: float = ((MIN_NOTE_TYPE * BEATS_PER_MEASURE) * 60) / BEATS_PER_MINUTE
 var DURATION: float = NUM_NOTES * MIN_NOTE_DURATION
 
-var MELODY_NOTES: Array[String] = ["R", "D", "UR", "D", "L"]
-var MELODY_NOTES_DURATIONS: Array[float] = [1, 2, 1, 4, 2]
-var MELODY_NEXT_BEAT: int = 0
-var MELODY_BEAT_SUM: float = 0
+var GUITAR_NOTES: Array[String] = ["R", "D", "UR", "D", "L"]
+var GUITAR_NOTES_DURATIONS: Array[float] = [1, 2, 1, 4, 2]
+var GUITAR_NEXT_BEAT: int = 0
+var GUITAR_BEAT_SUM: float = 0
 
 var BASS_NOTES: Array[String] = ["R", "L", "R", "L", "R", "L", "R", "L", "R", "L", "R", "L"]
 var BASS_NOTES_DURATIONS: Array[float] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 var BASS_NEXT_BEAT: int = 0
 var BASS_BEAT_SUM: float = 0
 
-@onready var MELODY_CHARACTER:= $RedBox
-@onready var MELODY_LABEL:= $RedBox/Label
+@onready var GUITAR_CHARACTER:= $RedBox
+@onready var GUITAR_LABEL:= $RedBox/Label
 @onready var BASS_CHARACTER:= $YellowBox
 @onready var BASS_LABEL:= $YellowBox/Label
 
-var MELODY_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
+var GUITAR_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
 var BASS_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var total: float = 0
-	# Validate duration for melody
-	for i in range(MELODY_NOTES_DURATIONS.size()):
-		MELODY_NOTES_DURATIONS[i] *= MIN_NOTE_DURATION
-		total += MELODY_NOTES_DURATIONS[i]
+	# Validate duration for GUITAR
+	for i in range(GUITAR_NOTES_DURATIONS.size()):
+		GUITAR_NOTES_DURATIONS[i] *= MIN_NOTE_DURATION
+		total += GUITAR_NOTES_DURATIONS[i]
 	
 	print("Expected: " + str(DURATION) + " | Calculated: " + str(total))
-	MELODY_CHARACTER_STARTING_POSITION = MELODY_CHARACTER.global_position
-	print(MELODY_CHARACTER_STARTING_POSITION)
+	GUITAR_CHARACTER_STARTING_POSITION = GUITAR_CHARACTER.global_position
+	print(GUITAR_CHARACTER_STARTING_POSITION)
 	
 	total = 0
 	# Validate duration for bass
@@ -88,12 +88,12 @@ func _input(event):
 
 func resetToStart():
 	BASS_CHARACTER.global_position = BASS_CHARACTER_STARTING_POSITION
-	MELODY_CHARACTER.global_position = MELODY_CHARACTER_STARTING_POSITION
+	GUITAR_CHARACTER.global_position = GUITAR_CHARACTER_STARTING_POSITION
 	CURRENT_TIME = -1
 	LAST_BEAT = -1
-	MELODY_NEXT_BEAT = 0
-	MELODY_BEAT_SUM = 0
-	MELODY_LABEL.text = "NT"
+	GUITAR_NEXT_BEAT = 0
+	GUITAR_BEAT_SUM = 0
+	GUITAR_LABEL.text = "NT"
 	BASS_NEXT_BEAT = 0
 	BASS_BEAT_SUM = 0
 	BASS_LABEL.text = "NT"
@@ -108,25 +108,25 @@ func moveCharacters(beat: int):
 			BASS_CHARACTER.global_position.x -= TILE_WIDTH
 			BASS_LABEL.text = "L"
 	
-	if MELODY_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
-		match MELODY_NOTES[MELODY_NEXT_BEAT]:
+	if GUITAR_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
+		match GUITAR_NOTES[GUITAR_NEXT_BEAT]:
 			"R":
-				MELODY_CHARACTER.global_position.x += TILE_WIDTH
-				MELODY_LABEL.text = "R"
+				GUITAR_CHARACTER.global_position.x += TILE_WIDTH
+				GUITAR_LABEL.text = "R"
 			"UR":
-				MELODY_CHARACTER.global_position.x += TILE_WIDTH
-				MELODY_CHARACTER.global_position.y -= TILE_WIDTH
-				MELODY_LABEL.text = "UR"
+				GUITAR_CHARACTER.global_position.x += TILE_WIDTH
+				GUITAR_CHARACTER.global_position.y -= TILE_WIDTH
+				GUITAR_LABEL.text = "UR"
 			"D":
-				MELODY_CHARACTER.global_position.y += TILE_WIDTH
-				MELODY_LABEL.text = "D"
+				GUITAR_CHARACTER.global_position.y += TILE_WIDTH
+				GUITAR_LABEL.text = "D"
 			"L":
-				MELODY_LABEL.text = "L"
-				MELODY_CHARACTER.global_position.x -= TILE_WIDTH
-		MELODY_BEAT_SUM += MELODY_NOTES_DURATIONS[MELODY_NEXT_BEAT]
-		MELODY_NEXT_BEAT += 1
+				GUITAR_LABEL.text = "L"
+				GUITAR_CHARACTER.global_position.x -= TILE_WIDTH
+		GUITAR_BEAT_SUM += GUITAR_NOTES_DURATIONS[GUITAR_NEXT_BEAT]
+		GUITAR_NEXT_BEAT += 1
 	else:
-		MELODY_LABEL.text = "H"
+		GUITAR_LABEL.text = "H"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
