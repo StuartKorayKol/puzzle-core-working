@@ -1,31 +1,32 @@
-[gd_scene format=3 uid="uid://ctdrfweeqa1mb"]
+[gd_scene format=3 uid="uid://oe1y8dkbiwbk"]
 
-[ext_resource type="Texture2D" uid="uid://cjbsvchx4wawu" path="res://red-box.png" id="1_tbeob"]
+[ext_resource type="Texture2D" uid="uid://bke5saxoec3us" path="res://art/yellow-box.png" id="1_kco2u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vll2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mblt"]
-size = Vector2(252, 250)
+size = Vector2(252, 252)
 
-[sub_resource type="LabelSettings" id="LabelSettings_tbeob"]
+[sub_resource type="LabelSettings" id="LabelSettings_kco2u"]
 font_size = 160
+font_color = Color(0, 0, 0, 1)
 
-[node name="RedBox" type="StaticBody2D" unique_id=1345704137]
+[node name="YellowBox" type="StaticBody2D" unique_id=1345704137]
 physics_material_override = SubResource("PhysicsMaterial_vll2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009232718]
-position = Vector2(0, 1)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_1mblt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251691541]
-texture = ExtResource("1_tbeob")
+texture = ExtResource("1_kco2u")
 
-[node name="Label" type="Label" parent="." unique_id=981830]
+[node name="Label" type="Label" parent="." unique_id=499161441]
 offset_left = -119.0
 offset_top = -119.0
 offset_right = 117.0
 offset_bottom = 117.0
 text = "NT"
-label_settings = SubResource("LabelSettings_tbeob")
+label_settings = SubResource("LabelSettings_kco2u")
 horizontal_alignment = 1
 vertical_alignment = 1

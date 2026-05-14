@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://oe1y8dkbiwbk"]
+[gd_scene format=3 uid="uid://b2dcux4u335pw"]
 
-[ext_resource type="Texture2D" uid="uid://bke5saxoec3us" path="res://yellow-box.png" id="1_kco2u"]
+[ext_resource type="Texture2D" uid="uid://chm64u81uaanb" path="res://art/blue-box.png" id="1_n7hpu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vll2f"]
 
@@ -11,7 +11,7 @@ size = Vector2(252, 252)
 font_size = 160
 font_color = Color(0, 0, 0, 1)
 
-[node name="YellowBox" type="StaticBody2D" unique_id=1345704137]
+[node name="BlueBox" type="StaticBody2D" unique_id=1345704137]
 physics_material_override = SubResource("PhysicsMaterial_vll2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009232718]
@@ -19,7 +19,7 @@ position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_1mblt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251691541]
-texture = ExtResource("1_kco2u")
+texture = ExtResource("1_n7hpu")
 
 [node name="Label" type="Label" parent="." unique_id=499161441]
 offset_left = -119.0

@@ -1,3 +1,29 @@
+# Dig Me Out 80 BPM, min note is a sixteenth note (0.0625). Puzzle can be 1 block or two measures
+
+# Guitar (Red box)
+# Ee, Ee, De, De, Ee, Ee, De, Ee, Be, Be, Be, Be, Be, Be, Be, Be
+# DR, DR, R, R, DR, DR, R, DR, U, U, U, U, U, U, U, U
+
+# Bass (Yellow box)
+# De, De, De, De, De, De, De, De, Be, Be, Be, Be, Be, Be, Be, Be
+# R, R, R, R, R, R, R, R, U, U, U, U, U, U, U, U
+
+# Drums (Blue box)
+# NOTE: We should separate into two tracks, one for snare/bass drum and one for crash cymbal and high hats as they could be played independently and combined
+#
+# Combined: 
+# Be&Ce, Be&Ce, Fe&Ce, Fe&Ce, Be&Ce, Be&Ce, Fe&Ce, Fe&Ce, Be&Ce, Be&Ce, Fe&Ce, Fe&xe, Be&Ce, Be&xe, Fe&xe, Fs&xe, Fs&xe 
+# UR, UR, UL, UL, UR, UR, UL, UL, UR, UR, UL, L, UR, R, L, L, L
+#
+# Bass/Snare:
+# Be, Be, Fe, Fe, Be, Be, Fe, Fe, Be, Be, Fe, Fe, Be, Be, Fe, Fs, Fs
+# R, R, L, L, R, R, L, L, R, R, L, L, R, R, L, L, L
+# 
+# Crash/High-hat
+# Ce, Ce, Ce, Ce, Ce, Ce, Ce, Ce, Ce, Ce, Ce, xe, Ce, xe, xe, xe
+# U, U, U, U, U, U, U, U, U, U, U, x, U, x, x, x
+
+
 extends Node2D
 
 const TILE_WIDTH: int = 256
@@ -7,9 +33,9 @@ const TILE_WIDTH: int = 256
 const NUM_NOTES: int = 10
 var CURRENT_TIME: float = -1
 var LAST_BEAT: int = -1
-var BEATS_PER_MINUTE: int = 120
+var BEATS_PER_MINUTE: int = 80
 var BEATS_PER_MEASURE: int = 4
-var MIN_NOTE_TYPE: float = 0.125
+var MIN_NOTE_TYPE: float =  0.0625
 # Assuming for now that time signature is 4/4 and minimum note is a quarter note
 var MIN_NOTE_DURATION: float = ((MIN_NOTE_TYPE * BEATS_PER_MEASURE) * 60) / BEATS_PER_MINUTE
 var DURATION: float = NUM_NOTES * MIN_NOTE_DURATION
