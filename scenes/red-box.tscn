@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctdrfweeqa1mb"]
 
 [ext_resource type="Texture2D" uid="uid://cjbsvchx4wawu" path="res://art/red-box.png" id="1_tbeob"]
+[ext_resource type="AudioStream" uid="uid://cuspdkak81jbp" path="res://audio/Dig Me Out/Dig Me Out Lead Guitar Only.wav" id="2_3f74u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vll2f"]
 
@@ -29,3 +30,7 @@ text = "NT"
 label_settings = SubResource("LabelSettings_tbeob")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamGuitar" type="AudioStreamPlayer2D" parent="." unique_id=307089734]
+stream = ExtResource("2_3f74u")
+max_distance = 10000.0

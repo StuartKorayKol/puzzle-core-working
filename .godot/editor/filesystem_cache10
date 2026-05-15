@@ -1,15 +1,21 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778730470
-README.md::TextFile::-1::1778558558::0::1::::<><><>0<>0<><>::
-::res://art/::1778730436
-blue-box.png::CompressedTexture2D::5290870923353745275::1778040329::1778730425::1::::<><><>0<>0<>4ff37f79ba8f42355869b08fe4da160d<>res://.godot/imported/blue-box.png-afcb9bff7c928bc56132bb58c681ebfb.ctex::
-brown-box.png::CompressedTexture2D::8958978608098470230::1778730410::1778730428::1::::<><><>0<>0<>4e735990320da1d955948678f7c48a45<>res://.godot/imported/brown-box.png-b2baadc949134f920d66e1fb28024157.ctex::
-red-box.png::CompressedTexture2D::5407735862369317664::1778040329::1778730433::1::::<><><>0<>0<>5da0bcad0bf81c2fa62c1df23d9f25c9<>res://.godot/imported/red-box.png-2daca46dbbe618af5f253b9e6c468acf.ctex::
-yellow-box.png::CompressedTexture2D::3098420321335000570::1778040512::1778730436::1::::<><><>0<>0<>fbd39710a1841564324a6ac4c350c0ac<>res://.godot/imported/yellow-box.png-b8e701474b3981cf71649b02ba3bf8e7.ctex::
-::res://scenes/::1778730470
-blue-box.tscn::PackedScene::4287870998829428588::1778730424::0::1::::<><><>0<>0<><>::uid://chm64u81uaanb::::res://art/blue-box.png
-main.tscn::PackedScene::1714362535201249871::1778730476::0::1::::<><><>0<>0<><>::uid://baeq41tk3fmlu::::res://main.gd<>uid://chm64u81uaanb::::res://art/blue-box.png<>uid://ctdrfweeqa1mb::::res://scenes/red-box.tscn<>uid://oe1y8dkbiwbk::::res://scenes/yellow-box.tscn<>uid://b2dcux4u335pw::::res://scenes/blue-box.tscn
-red-box.tscn::PackedScene::6113664809513625473::1778730432::0::1::::<><><>0<>0<><>::uid://cjbsvchx4wawu::::res://art/red-box.png
-yellow-box.tscn::PackedScene::992524561175336532::1778730436::0::1::::<><><>0<>0<><>::uid://bke5saxoec3us::::res://art/yellow-box.png
-::res://scripts/::0
-main.gd::GDScript::2395702850067215650::1778730166::0::1::::<>Node2D<><>0<>0<><>::
+::res://::1778814865
+README.md::TextFile::-1::1778660942::0::1::::<><><>0<>0<><>::
+::res://art/::1778731469
+blue-box.png::CompressedTexture2D::5290870923353745275::1778731461::1778731469::1::::<><><>0<>0<>4ff37f79ba8f42355869b08fe4da160d<>res://.godot/imported/blue-box.png-afcb9bff7c928bc56132bb58c681ebfb.ctex::
+brown-box.png::CompressedTexture2D::8958978608098470230::1778731461::1778731469::1::::<><><>0<>0<>4e735990320da1d955948678f7c48a45<>res://.godot/imported/brown-box.png-b2baadc949134f920d66e1fb28024157.ctex::
+red-box.png::CompressedTexture2D::5407735862369317664::1778731461::1778731469::1::::<><><>0<>0<>5da0bcad0bf81c2fa62c1df23d9f25c9<>res://.godot/imported/red-box.png-2daca46dbbe618af5f253b9e6c468acf.ctex::
+yellow-box.png::CompressedTexture2D::3098420321335000570::1778731461::1778731469::1::::<><><>0<>0<>fbd39710a1841564324a6ac4c350c0ac<>res://.godot/imported/yellow-box.png-b8e701474b3981cf71649b02ba3bf8e7.ctex::
+::res://audio/::1778814874
+::res://audio/Dig Me Out/::1778814892
+Dig Me Out Drums Part 1.wav::AudioStreamWAV::7701679928959263943::1778814887::1778814888::1::::<><><>0<>0<>00faa7f723feb6178c48069197ed7af0<>res://.godot/imported/Dig Me Out Drums Part 1.wav-8c21727b50e8368c847e053419d8913c.sample::
+Dig Me Out Drums Part 2.wav::AudioStreamWAV::7530831914948584220::1778814884::1778814885::1::::<><><>0<>0<>68ab270f2c81cc4fa7adce2d158093fd<>res://.godot/imported/Dig Me Out Drums Part 2.wav-8d62e15cbceb25a5212d4997050d4f5b.sample::
+Dig Me Out Lead Guitar Only.wav::AudioStreamWAV::6214693677726124533::1778814892::1778814893::1::::<><><>0<>0<>2931e4fc46f88757f04bb911fd18ce17<>res://.godot/imported/Dig Me Out Lead Guitar Only.wav-d4a323a6582d8af7a2fff89fcfea8117.sample::
+Dig Me Out Rhythm Guitar Only.wav::AudioStreamWAV::6258675208840498159::1778814889::1778814890::1::::<><><>0<>0<>bd910562ea49898a4077da9b5da62cce<>res://.godot/imported/Dig Me Out Rhythm Guitar Only.wav-353bf192f07e064678bb9e502f6085d6.sample::
+::res://scenes/::1778814810
+blue-box.tscn::PackedScene::4287870998829428588::1778731461::0::1::::<><><>0<>0<><>::uid://chm64u81uaanb::::res://art/blue-box.png
+main.tscn::PackedScene::1714362535201249871::1778814810::0::1::::<><><>0<>0<><>::uid://baeq41tk3fmlu::::res://scripts/main.gd<>uid://d0v2clqicskpa::::res://art/brown-box.png<>uid://ctdrfweeqa1mb::::res://scenes/red-box.tscn<>uid://oe1y8dkbiwbk::::res://scenes/yellow-box.tscn<>uid://b2dcux4u335pw::::res://scenes/blue-box.tscn
+red-box.tscn::PackedScene::6113664809513625473::1778731461::0::1::::<><><>0<>0<><>::uid://cjbsvchx4wawu::::res://art/red-box.png
+yellow-box.tscn::PackedScene::992524561175336532::1778731461::0::1::::<><><>0<>0<><>::uid://bke5saxoec3us::::res://art/yellow-box.png
+::res://scripts/::1778814810
+main.gd::GDScript::2395702850067215650::1778814810::0::1::::<>Node2D<><>0<>0<><>::

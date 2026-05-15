@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cuspdkak81jbp"
+path="res://.godot/imported/Dig Me Out Lead Guitar Only.wav-d4a323a6582d8af7a2fff89fcfea8117.sample"
+
+[deps]
+
+source_file="res://audio/Dig Me Out/Dig Me Out Lead Guitar Only.wav"
+dest_files=["res://.godot/imported/Dig Me Out Lead Guitar Only.wav-d4a323a6582d8af7a2fff89fcfea8117.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

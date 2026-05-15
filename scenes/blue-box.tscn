@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b2dcux4u335pw"]
 
 [ext_resource type="Texture2D" uid="uid://chm64u81uaanb" path="res://art/blue-box.png" id="1_n7hpu"]
+[ext_resource type="AudioStream" uid="uid://dhy0sp67kjiwt" path="res://audio/Dig Me Out/Dig Me Out Drums Part 1.wav" id="2_oixx3"]
+[ext_resource type="AudioStream" uid="uid://dfj8x31xf1757" path="res://audio/Dig Me Out/Dig Me Out Drums Part 2.wav" id="3_31yqo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vll2f"]
 
@@ -30,3 +32,11 @@ text = "NT"
 label_settings = SubResource("LabelSettings_kco2u")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamDrums" type="AudioStreamPlayer2D" parent="." unique_id=26910131]
+stream = ExtResource("2_oixx3")
+max_distance = 10000.0
+
+[node name="AudioStreamCymbals" type="AudioStreamPlayer2D" parent="." unique_id=380829402]
+stream = ExtResource("3_31yqo")
+max_distance = 10000.0

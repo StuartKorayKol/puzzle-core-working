@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvf0p4a5m821h"
+path="res://.godot/imported/Dig Me Out Rhythm Guitar Only.wav-353bf192f07e064678bb9e502f6085d6.sample"
+
+[deps]
+
+source_file="res://audio/Dig Me Out/Dig Me Out Rhythm Guitar Only.wav"
+dest_files=["res://.godot/imported/Dig Me Out Rhythm Guitar Only.wav-353bf192f07e064678bb9e502f6085d6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

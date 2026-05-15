@@ -27,10 +27,10 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_h2yge")
 
 [node name="RedBox" parent="." unique_id=1345704137 instance=ExtResource("3_o6xl0")]
-position = Vector2(128, 128)
-
-[node name="YellowBox" parent="." unique_id=1330411690 instance=ExtResource("4_tipki")]
 position = Vector2(128, 896)
 
+[node name="YellowBox" parent="." unique_id=1330411690 instance=ExtResource("4_tipki")]
+position = Vector2(128, 2432)
+
 [node name="BlueBox" parent="." unique_id=1431836472 instance=ExtResource("5_85g3d")]
-position = Vector2(129, 380)
+position = Vector2(896, 3200)
