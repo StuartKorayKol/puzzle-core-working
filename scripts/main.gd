@@ -78,9 +78,11 @@ var CYMBAL_NOTES_DURATIONS: Array[float] = [
 var CYMBAL_NEXT_BEAT: int = 0
 var CYMBAL_BEAT_SUM: float = 0
 
-@onready var GUITAR_CHARACTER:= $RedBox
-@onready var GUITAR_LABEL:= $RedBox/Label
-@onready var GUITAR_AUDIO:= $RedBox/AudioStreamGuitar
+@onready var GUITAR_SCENE: PackedScene = load("res://scenes/red-box.tscn")
+@onready var GUITAR_SPAWNER:= $"Red-Spawner"
+var GUITAR_INSTANCE: StaticBody2D = null
+var GUITAR_LABEL: Label = null
+var GUITAR_AUDIO: AudioStreamPlayer2D = null
 
 @onready var BASS_CHARACTER:= $YellowBox
 @onready var BASS_LABEL:= $YellowBox/Label
@@ -96,7 +98,7 @@ var BASS_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
 var DRUM_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void:	
 	var total: float = 0
 	# Validate duration for Guitar
 	for i in range(GUITAR_NOTES_DURATIONS.size()):
@@ -104,7 +106,6 @@ func _ready() -> void:
 		total += GUITAR_NOTES_DURATIONS[i]
 	
 	assert(DURATION == total, "Guitar Validation | Expected: " + str(DURATION) + " | Calculated: " + str(total))
-	GUITAR_CHARACTER_STARTING_POSITION = GUITAR_CHARACTER.global_position
 	
 	total = 0
 	# Validate duration for Bass
@@ -139,17 +140,21 @@ func _input(event):
 	if event is InputEventKey and event.pressed and not event.echo and CURRENT_TIME <= 0:
 		print("Starting the dance....")
 		CURRENT_TIME = DURATION
-		GUITAR_AUDIO.play()
-		GUITAR_AUDIO.seek(6)
+		GUITAR_INSTANCE = GUITAR_SCENE.instantiate()
+		GUITAR_SPAWNER.add_child(GUITAR_INSTANCE)
+		GUITAR_LABEL = get_node("Red-Spawner/RedBox/Label")
+		#GUITAR_AUDIO.play()
+		#GUITAR_AUDIO.seek(6)
 		#BASS_AUDIO.seek(6)
 		#DRUM_AUDIO.play(27)
 		#CYMBAL_AUDIO.play(27)
 
 func resetToStart():
-	GUITAR_CHARACTER.global_position = GUITAR_CHARACTER_STARTING_POSITION
+	if GUITAR_INSTANCE != null:
+		GUITAR_INSTANCE.queue_free()
+		GUITAR_INSTANCE = null
 	GUITAR_NEXT_BEAT = 0
 	GUITAR_BEAT_SUM = 0
-	GUITAR_LABEL.text = "NT"
 	
 	BASS_CHARACTER.global_position = BASS_CHARACTER_STARTING_POSITION
 	BASS_NEXT_BEAT = 0
@@ -189,7 +194,7 @@ func moveCharacters(beat: int):
 	var directional: String = ""
 	if GUITAR_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
 		directional = GUITAR_NOTES[GUITAR_NEXT_BEAT]
-		moveCharacter(GUITAR_CHARACTER, GUITAR_LABEL, directional)
+		moveCharacter(GUITAR_INSTANCE, GUITAR_LABEL, directional)
 		GUITAR_BEAT_SUM += GUITAR_NOTES_DURATIONS[GUITAR_NEXT_BEAT]
 		GUITAR_NEXT_BEAT += 1
 	else:
@@ -238,10 +243,10 @@ func _process(delta: float) -> void:
 		#  within the same beat). This should NOT be a collision because movement should be
 		#  simultaneous
 		# TODO: There might be a better implementation for the below...will investigate later
-		if GUITAR_CHARACTER.global_position == BASS_CHARACTER.global_position or \
-			GUITAR_CHARACTER.global_position == DRUM_CHARACTER.global_position or \
-			BASS_CHARACTER.global_position == DRUM_CHARACTER.global_position:
-			print("TWO CHARACTERS HAVE COLLIDED ON BEAT: " + str(index))
+		#if GUITAR_CHARACTER.global_position == BASS_CHARACTER.global_position or \
+			#GUITAR_CHARACTER.global_position == DRUM_CHARACTER.global_position or \
+			#BASS_CHARACTER.global_position == DRUM_CHARACTER.global_position:
+			#print("TWO CHARACTERS HAVE COLLIDED ON BEAT: " + str(index))
 		LAST_BEAT = index
 
 	var oldTime = CURRENT_TIME
