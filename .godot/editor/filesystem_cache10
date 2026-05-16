@@ -1,21 +1,28 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778814865
+::res://::1778939683
 README.md::TextFile::-1::1778660942::0::1::::<><><>0<>0<><>::
-::res://art/::1778731469
+::res://art/::1778940151
+blue-box-64.png::CompressedTexture2D::8230221193600248552::1778940151::1778940152::1::::<><><>0<>0<>b81d0d822898515af933ad0e3eee2c81<>res://.godot/imported/blue-box-64.png-a81518bc4f8ec838f25c98b7c21bb5dc.ctex::
 blue-box.png::CompressedTexture2D::5290870923353745275::1778731461::1778731469::1::::<><><>0<>0<>4ff37f79ba8f42355869b08fe4da160d<>res://.godot/imported/blue-box.png-afcb9bff7c928bc56132bb58c681ebfb.ctex::
+blue-highlight-64.png::CompressedTexture2D::3338799784140160381::1778940151::1778940152::1::::<><><>0<>0<>07eaa921184ec7c921dc40379165e601<>res://.godot/imported/blue-highlight-64.png-4c30b5501aa83525e8e7da40017b145d.ctex::
+brown-box-64.png::CompressedTexture2D::6780310244643737037::1778940151::1778940152::1::::<><><>0<>0<>6f691a546073d961e450075d3cf2491f<>res://.godot/imported/brown-box-64.png-678277486574398736ad6745bc5e3c9e.ctex::
 brown-box.png::CompressedTexture2D::8958978608098470230::1778731461::1778731469::1::::<><><>0<>0<>4e735990320da1d955948678f7c48a45<>res://.godot/imported/brown-box.png-b2baadc949134f920d66e1fb28024157.ctex::
+red-box-64.png::CompressedTexture2D::6381870869334855908::1778940151::1778940152::1::::<><><>0<>0<>e2e6d53e55d3324dbe33781d6edd3e4f<>res://.godot/imported/red-box-64.png-bb65bde3b6be326c6967606bc25a6305.ctex::
 red-box.png::CompressedTexture2D::5407735862369317664::1778731461::1778731469::1::::<><><>0<>0<>5da0bcad0bf81c2fa62c1df23d9f25c9<>res://.godot/imported/red-box.png-2daca46dbbe618af5f253b9e6c468acf.ctex::
+red-highlight-64.png::CompressedTexture2D::3415074559922313530::1778940151::1778940152::1::::<><><>0<>0<>d184f351dbe33a4892c7d73a9b1875f6<>res://.godot/imported/red-highlight-64.png-519d2eb4cfffb9cd2c860f7b27faae54.ctex::
+yellow-box-64.png::CompressedTexture2D::6760378789955478419::1778940151::1778940152::1::::<><><>0<>0<>9071b8dcb4aceec93e792ecf1cb8991b<>res://.godot/imported/yellow-box-64.png-2a1b90984d0c2b45c29d9ff4859434d0.ctex::
 yellow-box.png::CompressedTexture2D::3098420321335000570::1778731461::1778731469::1::::<><><>0<>0<>fbd39710a1841564324a6ac4c350c0ac<>res://.godot/imported/yellow-box.png-b8e701474b3981cf71649b02ba3bf8e7.ctex::
+yellow-highlight-64.png::CompressedTexture2D::1270005858723673465::1778940151::1778940152::1::::<><><>0<>0<>a4c6a5188bbebb937a8643d1db99a0bd<>res://.godot/imported/yellow-highlight-64.png-8a6a52db12359be3f0fff5ec22b52c4d.ctex::
 ::res://audio/::1778814874
-::res://audio/Dig Me Out/::1778814892
+::res://audio/Dig Me Out/::1778814893
 Dig Me Out Drums Part 1.wav::AudioStreamWAV::7701679928959263943::1778814887::1778814888::1::::<><><>0<>0<>00faa7f723feb6178c48069197ed7af0<>res://.godot/imported/Dig Me Out Drums Part 1.wav-8c21727b50e8368c847e053419d8913c.sample::
 Dig Me Out Drums Part 2.wav::AudioStreamWAV::7530831914948584220::1778814884::1778814885::1::::<><><>0<>0<>68ab270f2c81cc4fa7adce2d158093fd<>res://.godot/imported/Dig Me Out Drums Part 2.wav-8d62e15cbceb25a5212d4997050d4f5b.sample::
 Dig Me Out Lead Guitar Only.wav::AudioStreamWAV::6214693677726124533::1778814892::1778814893::1::::<><><>0<>0<>2931e4fc46f88757f04bb911fd18ce17<>res://.godot/imported/Dig Me Out Lead Guitar Only.wav-d4a323a6582d8af7a2fff89fcfea8117.sample::
 Dig Me Out Rhythm Guitar Only.wav::AudioStreamWAV::6258675208840498159::1778814889::1778814890::1::::<><><>0<>0<>bd910562ea49898a4077da9b5da62cce<>res://.godot/imported/Dig Me Out Rhythm Guitar Only.wav-353bf192f07e064678bb9e502f6085d6.sample::
-::res://scenes/::1778814810
-blue-box.tscn::PackedScene::4287870998829428588::1778731461::0::1::::<><><>0<>0<><>::uid://chm64u81uaanb::::res://art/blue-box.png
-main.tscn::PackedScene::1714362535201249871::1778814810::0::1::::<><><>0<>0<><>::uid://baeq41tk3fmlu::::res://scripts/main.gd<>uid://d0v2clqicskpa::::res://art/brown-box.png<>uid://ctdrfweeqa1mb::::res://scenes/red-box.tscn<>uid://oe1y8dkbiwbk::::res://scenes/yellow-box.tscn<>uid://b2dcux4u335pw::::res://scenes/blue-box.tscn
-red-box.tscn::PackedScene::6113664809513625473::1778731461::0::1::::<><><>0<>0<><>::uid://cjbsvchx4wawu::::res://art/red-box.png
-yellow-box.tscn::PackedScene::992524561175336532::1778731461::0::1::::<><><>0<>0<><>::uid://bke5saxoec3us::::res://art/yellow-box.png
-::res://scripts/::1778814810
-main.gd::GDScript::2395702850067215650::1778814810::0::1::::<>Node2D<><>0<>0<><>::
+::res://scenes/::1778939789
+blue-box.tscn::PackedScene::4287870998829428588::1778851859::0::1::::<><><>0<>0<><>::uid://chm64u81uaanb::::res://art/blue-box.png<>uid://dhy0sp67kjiwt::::res://audio/Dig Me Out/Dig Me Out Drums Part 1.wav<>uid://dfj8x31xf1757::::res://audio/Dig Me Out/Dig Me Out Drums Part 2.wav
+main.tscn::PackedScene::1714362535201249871::1778939789::0::1::::<><><>0<>0<><>::uid://baeq41tk3fmlu::::res://scripts/main.gd<>uid://d0v2clqicskpa::::res://art/brown-box.png<>uid://ctdrfweeqa1mb::::res://scenes/red-box.tscn<>uid://oe1y8dkbiwbk::::res://scenes/yellow-box.tscn<>uid://b2dcux4u335pw::::res://scenes/blue-box.tscn
+red-box.tscn::PackedScene::6113664809513625473::1778851600::0::1::::<><><>0<>0<><>::uid://cjbsvchx4wawu::::res://art/red-box.png<>uid://cuspdkak81jbp::::res://audio/Dig Me Out/Dig Me Out Lead Guitar Only.wav
+yellow-box.tscn::PackedScene::992524561175336532::1778816192::0::1::::<><><>0<>0<><>::uid://bke5saxoec3us::::res://art/yellow-box.png<>uid://cvf0p4a5m821h::::res://audio/Dig Me Out/Dig Me Out Rhythm Guitar Only.wav
+::res://scripts/::1778939789
+main.gd::GDScript::2395702850067215650::1778939789::0::1::::<>Node2D<><>0<>0<><>::

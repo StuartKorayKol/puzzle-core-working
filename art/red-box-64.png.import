@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjbsvchx4wawu"
-path="res://.godot/imported/red-box.png-2daca46dbbe618af5f253b9e6c468acf.ctex"
+uid="uid://cw6oql27k00gm"
+path="res://.godot/imported/red-box-64.png-bb65bde3b6be326c6967606bc25a6305.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/red-box.png"
-dest_files=["res://.godot/imported/red-box.png-2daca46dbbe618af5f253b9e6c468acf.ctex"]
+source_file="res://art/red-box-64.png"
+dest_files=["res://.godot/imported/red-box-64.png-bb65bde3b6be326c6967606bc25a6305.ctex"]
 
 [params]
 

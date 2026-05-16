@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0v2clqicskpa"
-path="res://.godot/imported/brown-box.png-b2baadc949134f920d66e1fb28024157.ctex"
+uid="uid://dpi1sm7cigvqe"
+path="res://.godot/imported/blue-box-64.png-a81518bc4f8ec838f25c98b7c21bb5dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/brown-box.png"
-dest_files=["res://.godot/imported/brown-box.png-b2baadc949134f920d66e1fb28024157.ctex"]
+source_file="res://art/blue-box-64.png"
+dest_files=["res://.godot/imported/blue-box-64.png-a81518bc4f8ec838f25c98b7c21bb5dc.ctex"]
 
 [params]
 

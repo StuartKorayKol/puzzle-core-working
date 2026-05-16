@@ -1,33 +1,32 @@
 [gd_scene format=3 uid="uid://b2dcux4u335pw"]
 
-[ext_resource type="Texture2D" uid="uid://chm64u81uaanb" path="res://art/blue-box.png" id="1_n7hpu"]
+[ext_resource type="Texture2D" uid="uid://dpi1sm7cigvqe" path="res://art/blue-box-64.png" id="1_31yqo"]
 [ext_resource type="AudioStream" uid="uid://dhy0sp67kjiwt" path="res://audio/Dig Me Out/Dig Me Out Drums Part 1.wav" id="2_oixx3"]
 [ext_resource type="AudioStream" uid="uid://dfj8x31xf1757" path="res://audio/Dig Me Out/Dig Me Out Drums Part 2.wav" id="3_31yqo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vll2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mblt"]
-size = Vector2(252, 252)
+size = Vector2(64, 64)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kco2u"]
-font_size = 160
+font_size = 32
 font_color = Color(0, 0, 0, 1)
 
 [node name="BlueBox" type="StaticBody2D" unique_id=1345704137]
 physics_material_override = SubResource("PhysicsMaterial_vll2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009232718]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_1mblt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251691541]
-texture = ExtResource("1_n7hpu")
+texture = ExtResource("1_31yqo")
 
 [node name="Label" type="Label" parent="." unique_id=499161441]
-offset_left = -119.0
-offset_top = -119.0
-offset_right = 117.0
-offset_bottom = 117.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 text = "NT"
 label_settings = SubResource("LabelSettings_kco2u")
 horizontal_alignment = 1

@@ -1,7 +1,7 @@
 # Dig Me Out 80 BPM, min note is a sixteenth note (0.0625). Puzzle can be 1 block or two measures
 extends Node2D
 
-const TILE_WIDTH: int = 256
+const TILE_WIDTH: int = 64
 
 # NOTE: All durations are measured in seconds as godot delta is measured in seconds
 
