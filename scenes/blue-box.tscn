@@ -20,9 +20,11 @@ physics_material_override = SubResource("PhysicsMaterial_vll2f")
 shape = SubResource("RectangleShape2D_1mblt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1251691541]
+z_index = 1
 texture = ExtResource("1_31yqo")
 
 [node name="Label" type="Label" parent="." unique_id=499161441]
+z_index = 1
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0

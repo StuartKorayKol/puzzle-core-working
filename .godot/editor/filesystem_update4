@@ -4,3 +4,5 @@ res://scenes/red-box.tscn
 res://scenes/yellow-box.tscn
 res://scenes/blue-box.tscn
 res://scenes/red_spawner.tscn
+res://scenes/blue_spawner.tscn
+res://scenes/yellow_spawner.tscn

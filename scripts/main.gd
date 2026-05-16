@@ -84,18 +84,18 @@ var GUITAR_INSTANCE: StaticBody2D = null
 var GUITAR_LABEL: Label = null
 var GUITAR_AUDIO: AudioStreamPlayer2D = null
 
-@onready var BASS_CHARACTER:= $YellowBox
-@onready var BASS_LABEL:= $YellowBox/Label
-@onready var BASS_AUDIO:= $YellowBox/AudioStreamBass
+@onready var BASS_SCENE:= load("res://scenes/yellow-box.tscn")
+@onready var BASS_SPAWNER:= $"Yellow-Spawner"
+var BASS_INSTANCE: StaticBody2D = null
+var BASS_LABEL: Label = null
+var BASS_AUDIO: AudioStreamPlayer2D = null
 
-@onready var DRUM_CHARACTER:= $BlueBox
-@onready var DRUM_LABEL:= $BlueBox/Label
-@onready var DRUM_AUDIO:= $BlueBox/AudioStreamDrums
-@onready var CYMBAL_AUDIO:= $BlueBox/AudioStreamCymbals
-
-var GUITAR_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
-var BASS_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
-var DRUM_CHARACTER_STARTING_POSITION: Vector2 = Vector2(0, 0)
+@onready var DRUM_SCENE:= load("res://scenes/blue-box.tscn")
+@onready var DRUM_SPAWNER:= $"Blue-Spawner"
+var DRUM_INSTANCE: StaticBody2D = null
+var DRUM_LABEL: Label = null
+var DRUM_AUDIO: AudioStreamPlayer2D = null
+var CYMBAL_AUDIO: AudioStreamPlayer2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -114,7 +114,6 @@ func _ready() -> void:
 		total += BASS_NOTES_DURATIONS[i]
 	
 	assert(DURATION == total, "Bass Validation | Expected: " + str(DURATION) + " | Calculated: " + str(total))
-	BASS_CHARACTER_STARTING_POSITION = BASS_CHARACTER.global_position
 	
 	total = 0
 	# Validate duration for Drum
@@ -131,9 +130,7 @@ func _ready() -> void:
 		total += CYMBAL_NOTES_DURATIONS[i]
 	
 	assert(DURATION == total, "CYMBAL Validation | Expected: " + str(DURATION) + " | Calculated: " + str(total))
-	
-	DRUM_CHARACTER_STARTING_POSITION = DRUM_CHARACTER.global_position
-	
+		
 	print("Minimum note duration: " + str(MIN_NOTE_DURATION))
 
 func _input(event):
@@ -143,30 +140,64 @@ func _input(event):
 		GUITAR_INSTANCE = GUITAR_SCENE.instantiate()
 		GUITAR_SPAWNER.add_child(GUITAR_INSTANCE)
 		GUITAR_LABEL = get_node("Red-Spawner/RedBox/Label")
+		GUITAR_AUDIO = get_node("Red-Spawner/RedBox/AudioStreamGuitar")
+		
+		BASS_INSTANCE = BASS_SCENE.instantiate()
+		BASS_SPAWNER.add_child(BASS_INSTANCE)
+		BASS_LABEL = get_node("Yellow-Spawner/YellowBox/Label")
+		BASS_AUDIO = get_node("Yellow-Spawner/YellowBox/AudioStreamBass")
+		
+		DRUM_INSTANCE = DRUM_SCENE.instantiate()
+		DRUM_SPAWNER.add_child(DRUM_INSTANCE)
+		DRUM_LABEL = get_node("Blue-Spawner/BlueBox/Label")
+		DRUM_AUDIO = get_node("Blue-Spawner/BlueBox/AudioStreamDrums")
+		CYMBAL_AUDIO = get_node("Blue-Spawner/BlueBox/AudioStreamCymbals")
 		#GUITAR_AUDIO.play()
 		#GUITAR_AUDIO.seek(6)
 		#BASS_AUDIO.seek(6)
 		#DRUM_AUDIO.play(27)
 		#CYMBAL_AUDIO.play(27)
 
-func resetToStart():
+# If called with topOfSong as true, reset to play the song again, otherwise
+#  reset object so it will not attempt to continue to play
+func resetGuitar(topOfSong: bool):
 	if GUITAR_INSTANCE != null:
 		GUITAR_INSTANCE.queue_free()
 		GUITAR_INSTANCE = null
-	GUITAR_NEXT_BEAT = 0
-	GUITAR_BEAT_SUM = 0
-	
-	BASS_CHARACTER.global_position = BASS_CHARACTER_STARTING_POSITION
-	BASS_NEXT_BEAT = 0
-	BASS_BEAT_SUM = 0
-	BASS_LABEL.text = "NT"
-	
-	DRUM_CHARACTER.global_position = DRUM_CHARACTER_STARTING_POSITION
-	DRUM_NEXT_BEAT = 0
-	CYMBAL_NEXT_BEAT = 0
-	DRUM_BEAT_SUM = 0
-	CYMBAL_BEAT_SUM = 0
-	DRUM_LABEL.text = "NT"
+		GUITAR_LABEL = null
+		GUITAR_AUDIO = null
+	GUITAR_NEXT_BEAT = 0 if topOfSong else int(DURATION)
+	GUITAR_BEAT_SUM = 0 if topOfSong else int(DURATION)
+
+# If called with topOfSong as true, reset to play the song again, otherwise
+#  reset object so it will not attempt to continue to play
+func resetBass(topOfSong: bool):
+	if BASS_INSTANCE != null:
+		BASS_INSTANCE.queue_free()
+		BASS_INSTANCE = null
+		BASS_LABEL = null
+		BASS_AUDIO = null
+	BASS_NEXT_BEAT = 0 if topOfSong else int(DURATION)
+	BASS_BEAT_SUM = 0 if topOfSong else int(DURATION)
+
+# If called with topOfSong as true, reset to play the song again, otherwise
+#  reset object so it will not attempt to continue to play
+func resetDrums(topOfSong: bool):
+	if DRUM_INSTANCE != null:
+		DRUM_INSTANCE.queue_free()
+		DRUM_INSTANCE = null
+		DRUM_LABEL = null
+		DRUM_AUDIO = null
+		CYMBAL_AUDIO = null
+	DRUM_NEXT_BEAT = 0 if topOfSong else int(DURATION)
+	CYMBAL_NEXT_BEAT = 0 if topOfSong else int(DURATION)
+	DRUM_BEAT_SUM = 0 if topOfSong else int(DURATION)
+	CYMBAL_BEAT_SUM = 0 if topOfSong else int(DURATION)
+
+func resetToStart():
+	resetGuitar(true)
+	resetBass(true)
+	resetDrums(true)
 	
 	CURRENT_TIME = -1
 	LAST_BEAT = -1
@@ -187,7 +218,7 @@ func moveCharacter(instrument: Node2D, label: Label, directional: String):
 		instrument.global_position.y += TILE_WIDTH
 	# NOTE: No need to have a statement for Re (Rest) as this implies no movement
 	
-	if instrument != DRUM_CHARACTER:
+	if instrument != DRUM_INSTANCE:
 		label.text = directional
 
 func moveCharacters(beat: int):
@@ -197,32 +228,30 @@ func moveCharacters(beat: int):
 		moveCharacter(GUITAR_INSTANCE, GUITAR_LABEL, directional)
 		GUITAR_BEAT_SUM += GUITAR_NOTES_DURATIONS[GUITAR_NEXT_BEAT]
 		GUITAR_NEXT_BEAT += 1
-	else:
+	elif GUITAR_INSTANCE != null:
 		GUITAR_LABEL.text = "H"
 	
 	directional = ""
 	if BASS_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
 		directional = BASS_NOTES[BASS_NEXT_BEAT]
-		moveCharacter(BASS_CHARACTER, BASS_LABEL, directional)
+		moveCharacter(BASS_INSTANCE, BASS_LABEL, directional)
 		BASS_BEAT_SUM += BASS_NOTES_DURATIONS[BASS_NEXT_BEAT]
 		BASS_NEXT_BEAT += 1
-	else:
+	elif BASS_INSTANCE != null:
 		BASS_LABEL.text = "H"
 	
 	directional = ""
 	var drumText: String = "H"
 	if DRUM_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
 		directional = DRUM_NOTES[DRUM_NEXT_BEAT]
-		moveCharacter(DRUM_CHARACTER, DRUM_LABEL, directional)
+		moveCharacter(DRUM_INSTANCE, DRUM_LABEL, directional)
 		DRUM_BEAT_SUM += DRUM_NOTES_DURATIONS[DRUM_NEXT_BEAT]
 		DRUM_NEXT_BEAT += 1
 		drumText = directional
-	else:
-		drumText = "H"
 	
 	if CYMBAL_BEAT_SUM <= (beat * MIN_NOTE_DURATION):
 		directional = CYMBAL_NOTES[CYMBAL_NEXT_BEAT]
-		moveCharacter(DRUM_CHARACTER, DRUM_LABEL, directional)
+		moveCharacter(DRUM_INSTANCE, DRUM_LABEL, directional)
 		CYMBAL_BEAT_SUM += CYMBAL_NOTES_DURATIONS[CYMBAL_NEXT_BEAT]
 		CYMBAL_NEXT_BEAT += 1
 		if directional != "Re":
@@ -231,7 +260,8 @@ func moveCharacters(beat: int):
 			else:
 				drumText = directional + drumText
 	
-	DRUM_LABEL.text = drumText
+	if DRUM_INSTANCE != null:
+		DRUM_LABEL.text = drumText
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -243,10 +273,31 @@ func _process(delta: float) -> void:
 		#  within the same beat). This should NOT be a collision because movement should be
 		#  simultaneous
 		# TODO: There might be a better implementation for the below...will investigate later
-		#if GUITAR_CHARACTER.global_position == BASS_CHARACTER.global_position or \
-			#GUITAR_CHARACTER.global_position == DRUM_CHARACTER.global_position or \
-			#BASS_CHARACTER.global_position == DRUM_CHARACTER.global_position:
-			#print("TWO CHARACTERS HAVE COLLIDED ON BEAT: " + str(index))
+		var guitarCollision: bool = false
+		var bassCollision: bool = false
+		var drumCollision: bool = false
+		# TODO: Add collision detection for boundaries
+		if GUITAR_INSTANCE != null:
+			if BASS_INSTANCE != null:
+				if GUITAR_INSTANCE.global_position == BASS_INSTANCE.global_position:
+					guitarCollision = true
+					bassCollision = true
+			if DRUM_INSTANCE != null:
+				if GUITAR_INSTANCE.global_position == DRUM_INSTANCE.global_position:
+					guitarCollision = true
+					drumCollision = true
+		if BASS_INSTANCE != null and bassCollision == false:
+			if DRUM_INSTANCE != null:
+				if BASS_INSTANCE.global_position == DRUM_INSTANCE.global_position:
+					bassCollision = true
+					drumCollision = true
+		
+		if guitarCollision:
+			resetGuitar(false)
+		if bassCollision:
+			resetBass(false)
+		if drumCollision:
+			resetDrums(false)
 		LAST_BEAT = index
 
 	var oldTime = CURRENT_TIME

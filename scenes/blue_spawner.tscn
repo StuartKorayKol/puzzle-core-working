@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dsdtdmchcp2ti"]
+
+[ext_resource type="Texture2D" uid="uid://bntlsrusc6l8x" path="res://art/blue-highlight-64.png" id="1_d08v7"]
+
+[node name="Blue-Spawner" type="StaticBody2D" unique_id=1926075952]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=133510883]
+texture = ExtResource("1_d08v7")

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://baeq41tk3fmlu" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://c3uoypkblocs8" path="res://art/brown-box-64.png" id="2_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://oe1y8dkbiwbk" path="res://scenes/yellow-box.tscn" id="4_tipki"]
-[ext_resource type="PackedScene" uid="uid://b2dcux4u335pw" path="res://scenes/blue-box.tscn" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dgja88j6lfgbm" path="res://scenes/yellow_spawner.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dsdtdmchcp2ti" path="res://scenes/blue_spawner.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bv10x08dpbn15" path="res://scenes/red_spawner.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
@@ -29,8 +29,8 @@ tile_set = SubResource("TileSet_h2yge")
 [node name="Red-Spawner" parent="." unique_id=1926075952 instance=ExtResource("6_tefeu")]
 position = Vector2(32, 224)
 
-[node name="YellowBox" parent="." unique_id=1330411690 instance=ExtResource("4_tipki")]
+[node name="Yellow-Spawner" parent="." unique_id=744573616 instance=ExtResource("4_tbgi4")]
 position = Vector2(32, 608)
 
-[node name="BlueBox" parent="." unique_id=1431836472 instance=ExtResource("5_85g3d")]
-position = Vector2(224, 800)
+[node name="Blue-Spawner" parent="." unique_id=2026796477 instance=ExtResource("4_tefeu")]
+position = Vector2(160, 800)
